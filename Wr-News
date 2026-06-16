@@ -1,0 +1,225 @@
+index.html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WR News</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        /* Animação de Entrada */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 10px #3b82f6, 0 0 20px #3b82f6; }
+            50% { text-shadow: 0 0 20px #8b5cf6, 0 0 30px #8b5cf6; }
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #3b82f6;
+            animation: fadeIn 1s ease-out;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #3b82f6;
+            animation: glow 3s infinite ease-in-out;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        nav a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            background: #1e293b;
+        }
+
+        nav a:hover {
+            color: #fff;
+            background: #3b82f6;
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        .featured {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('https://picsum.photos/1200/400') center/cover;
+            height: 350px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid #334155;
+            transition: transform 0.3s ease;
+        }
+
+        .featured:hover {
+            transform: scale(1.01);
+            border-color: #3b82f6;
+        }
+
+        .featured h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .grid-news {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: #1e293b;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #334155;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: #8b5cf6;
+            box-shadow: 0 10px 20px rgba(139, 92, 246, 0.2);
+        }
+
+        .card-img {
+            height: 180px;
+            background-color: #334155;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .badge {
+            background: #3b82f6;
+            color: white;
+            font-size: 0.75rem;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .card:nth-child(2) .badge { background: #10b981; }
+        .card:nth-child(3) .badge { background: #f59e0b; }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #f1f5f9;
+        }
+
+        .card p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        footer {
+            text-align: center;
+            padding: 4px;
+            background: #0f172a;
+            color: #64748b;
+            margin-top: 50px;
+            border-top: 1px solid #334155;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>WR NEWS</h1>
+        <nav>
+            <a href="#">Início</a>
+            <a href="#">Tecnologia</a>
+            <a href="#">Games</a>
+            <a href="#">Cultura Pop</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="featured">
+            <span class="badge" style="background: #ef4444;">Destaque do Dia</span>
+            <h2>Grandes novidades tecnológicas e o impacto no mercado atual</h2>
+            <p style="color: #cbd5e1;">Fique por dentro das principais mudanças que estão moldando o futuro digital.</p>
+        </section>
+
+        <section class="grid-news">
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://picsum.photos/400/250?random=1')"></div>
+                <div class="card-content">
+                    <span class="badge">Tecnologia</span>
+                    <h3>O Avanço das Novas IAs</h3>
+                    <p>Descubra como os novos modelos de inteligência artificial estão mudando a rotina de criação de conteúdo e programação no mundo inteiro.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://picsum.photos/400/250?random=2')"></div>
+                <div class="card-content">
+                    <span class="badge">Games</span>
+                    <h3>Próximos Lançamentos</h3>
+                    <p>Confira a lista dos jogos mais aguardados para os próximos meses e o que esperar dos gráficos e novas mecânicas de gameplay.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://picsum.photos/400/250?random=3')"></div>
+                <div class="card-content">
+                    <span class="badge">Cultura Pop</span>
+                    <h3>Animações em Alta</h3>
+                    <p>O mercado de animações e designs modernos continua quebrando recordes. Veja os novos estilos visuais que estão dominando as telas.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 WR News. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
