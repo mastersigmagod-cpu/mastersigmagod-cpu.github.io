@@ -18,7 +18,6 @@
             overflow-x: hidden;
         }
 
-        /* Animação de Entrada */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -86,6 +85,7 @@
             margin-bottom: 30px;
             border: 1px solid #334155;
             transition: transform 0.3s ease;
+            cursor: pointer;
         }
 
         .featured:hover {
@@ -142,24 +142,73 @@
             margin-bottom: 10px;
         }
 
-        .card:nth-child(2) .badge { background: #10b981; }
-        .card:nth-child(3) .badge { background: #f59e0b; }
-
-        .card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: #f1f5f9;
+        /* --- SISTEMA DE MODAL (JANELA DE NOTÍCIA) --- */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(5px);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
-        .card p {
+        .modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background: #1e293b;
+            border: 2px solid #3b82f6;
+            padding: 30px;
+            border-radius: 16px;
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+            transform: scale(0.7);
+            transition: transform 0.3s ease;
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
+        }
+
+        .modal.active .modal-content {
+            transform: scale(1);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.8rem;
             color: #94a3b8;
-            font-size: 0.95rem;
-            line-height: 1.5;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .close-btn:hover {
+            color: #ef4444;
+        }
+
+        .modal h2 {
+            margin-bottom: 15px;
+            color: #3b82f6;
+        }
+
+        .modal p {
+            color: #cbd5e1;
+            line-height: 1.6;
+            font-size: 1.1rem;
         }
 
         footer {
             text-align: center;
-            padding: 4px;
+            padding: 20px;
             background: #0f172a;
             color: #64748b;
             margin-top: 50px;
@@ -172,53 +221,77 @@
     <header>
         <h1>WR NEWS</h1>
         <nav>
-            <a href="#">Início</a>
-            <a href="#">Tecnologia</a>
-            <a href="#">Games</a>
-            <a href="#">Cultura Pop</a>
+            <a href="#" onclick="alert('Você já está na página inicial!')">Início</a>
+            <a href="#" onclick="alert('Filtro de Tecnologia em breve!')">Tecnologia</a>
+            <a href="#" onclick="alert('Filtro de Games em breve!')">Games</a>
+            <a href="#" onclick="alert('Filtro de Cultura Pop em breve!')">Cultura Pop</a>
         </nav>
     </header>
 
     <main>
-        <section class="featured">
+        <section class="featured" onclick="openNews('Destaque do Dia', 'Esta é a matéria principal do WR News. Aqui você pode escrever um texto longo explicando em detalhes as grandes mudanças do mercado tecnológico, o avanço das novas ferramentas de desenvolvimento e tudo o que está rolando de mais quente no mundo digital esta semana.')">
             <span class="badge" style="background: #ef4444;">Destaque do Dia</span>
             <h2>Grandes novidades tecnológicas e o impacto no mercado atual</h2>
-            <p style="color: #cbd5e1;">Fique por dentro das principais mudanças que estão moldando o futuro digital.</p>
+            <p style="color: #cbd5e1;">Toque para ler a matéria completa sobre o futuro digital.</p>
         </section>
 
         <section class="grid-news">
-            <div class="card">
+            <div class="card" onclick="openNews('O Avanço das Novas IAs', 'As Inteligências Artificiais estão evoluindo a passos largos em 2026. Modelos de linguagem e geração de imagens agora ajudam criadores de conteúdo e programadores a produzirem dez vezes mais rápido. Especialistas debatem como o mercado de trabalho vai se adaptar a essa nova realidade nos próximos meses.')">
                 <div class="card-img" style="background-image: url('https://picsum.photos/400/250?random=1')"></div>
                 <div class="card-content">
                     <span class="badge">Tecnologia</span>
                     <h3>O Avanço das Novas IAs</h3>
-                    <p>Descubra como os novos modelos de inteligência artificial estão mudando a rotina de criação de conteúdo e programação no mundo inteiro.</p>
+                    <p>Descubra como os novos modelos estão mudando a rotina de criação de conteúdo...</p>
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card" onclick="openNews('Próximos Lançamentos de Games', 'Os estúdios de games estão preparando a próxima geração de motores gráficos. Títulos muito aguardados prometem física ultra-realista e tempos de carregamento nulos. Preparem seus consoles e PCs, porque o segundo semestre promete entregar os candidatos a Jogo do Ano.')">
                 <div class="card-img" style="background-image: url('https://picsum.photos/400/250?random=2')"></div>
                 <div class="card-content">
                     <span class="badge">Games</span>
                     <h3>Próximos Lançamentos</h3>
-                    <p>Confira a lista dos jogos mais aguardados para os próximos meses e o que esperar dos gráficos e novas mecânicas de gameplay.</p>
+                    <p>Confira a lista dos jogos mais aguardados para os próximos meses e novas mecânicas...</p>
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card" onclick="openNews('Animações em Alta no Streaming', 'O estilo visual das animações modernas está ditando regras em Hollywood. Traços estilizados, misturas de 2D com 3D e cores vibrantes conquistaram o público jovem e adulto, superando bilheterias de grandes produções tradicionais live-action.')">
                 <div class="card-img" style="background-image: url('https://picsum.photos/400/250?random=3')"></div>
                 <div class="card-content">
                     <span class="badge">Cultura Pop</span>
                     <h3>Animações em Alta</h3>
-                    <p>O mercado de animações e designs modernos continua quebrando recordes. Veja os novos estilos visuais que estão dominando as telas.</p>
+                    <p>O mercado de designs modernos continua quebrando recordes. Veja os novos estilos visuais...</p>
                 </div>
             </div>
         </section>
     </main>
 
+    <div id="newsModal" class="modal" onclick="closeNews()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeNews()">&times;</span>
+            <h2 id="modalTitle">Título da Notícia</h2>
+            <p id="modalBody">Conteúdo completo aqui...</p>
+        </div>
+    </div>
+
     <footer>
         <p>&copy; 2026 WR News. Todos os direitos reservados.</p>
     </footer>
 
+    <script>
+        function openNews(title, text) {
+            const modal = document.getElementById('newsModal');
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalBody').innerText = text;
+            
+            modal.classList.add('active');
+        }
+
+        function closeNews() {
+            const modal = document.getElementById('newsModal');
+            modal.classList.remove('active');
+        }
+    </script>
+
 </body>
-</html>
+                </html>
+                
