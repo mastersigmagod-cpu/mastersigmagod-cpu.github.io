@@ -3,78 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WR News - Informação Direta e Sólida</title>
+    <title>WR News</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <aside id="sidebar" class="sidebar">
-        <div class="sidebar-header">
-            <h2>Configurações</h2>
-            <button id="close-btn" class="solid-btn outline">X</button>
-        </div>
-        <ul class="sidebar-links">
-            <li><button id="theme-toggle" class="menu-btn">Tema: Escuro (Ativar)</button></li>
-            <li><button class="menu-btn" onclick="alert('Funcionalidade em breve!')">Meus Favoritos</button></li>
-            <li><button class="menu-btn" onclick="alert('Funcionalidade em breve!')">Limpar Minhas Notícias</button></li>
-        </ul>
-    </aside>
-
-    <div id="overlay" class="overlay"></div>
-
-    <header class="cabecalho">
-        <div class="header-top">
-            <div class="hamburger" id="hamburger-btn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            
-            <div class="logo">
-                <h1>WR <span class="destaque">News</span></h1>
-            </div>
-            
-            <button id="btn-add-news" class="solid-btn">Nova Notícia</button>
-        </div>
-
-        <nav class="navegacao">
-            <ul class="categorias-scroll">
-                <li><button class="cat-btn active">Últimas</button></li>
-                <li><button class="cat-btn">Brasil</button></li>
-                <li><button class="cat-btn">Mundo</button></li>
-                <li><button class="cat-btn">Tecnologia</button></li>
-                <li><button class="cat-btn">Economia</button></li>
-                <li><button class="cat-btn">Esportes</button></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main class="container">
-        <section id="news-container" class="grid-noticias">
-            </section>
-    </main>
-
-    <div id="modal-add" class="modal">
-        <div class="modal-content">
-            <h2>Escrever Matéria</h2>
-            <form id="form-news">
-                <input type="text" id="news-title" placeholder="Título da Notícia" required>
-                <input type="text" id="news-category" placeholder="Categoria (ex: Economia)" required>
-                <input type="url" id="news-image" placeholder="URL da Imagem (Opcional)">
-                <textarea id="news-desc" placeholder="Resumo dos fatos..." rows="5" required></textarea>
-                <div class="modal-actions">
-                    <button type="button" id="btn-cancel" class="solid-btn outline">Cancelar</button>
-                    <button type="submit" class="solid-btn">Publicar</button>
-                </div>
-            </form>
-        </div>
+    <!-- Barrinha superior (Rede) -->
+    <div class="top-nav">
+        <a href="#">wr.com</a>
+        <a href="#" class="active">wr news</a>
+        <a href="#">esportes</a>
+        <a href="#">entretenimento</a>
     </div>
 
-    <footer class="rodape">
-        <p>&copy; 2026 WR News. Todos os direitos reservados.</p>
-    </footer>
+    <!-- Cabeçalho Principal (Agora em Azul Frio) -->
+    <header class="main-header">
+        <button id="menu-btn" class="icon-btn">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        
+        <div class="logo">
+            <h1>WR <span>NEWS</span></h1>
+        </div>
+        
+        <div class="header-icons">
+            <button class="icon-btn">🔍</button>
+            <button class="icon-btn profile-icon">👤</button>
+        </div>
+    </header>
 
+    <!-- Menu Lateral -->
+    <nav id="side-menu" class="side-menu">
+        <ul class="menu-list">
+            <li><a href="#">editorias <span class="arrow">›</span></a></li>
+            <li><a href="#">vídeos <span class="arrow">›</span></a></li>
+            <li><a href="#">podcasts <span class="arrow">›</span></a></li>
+            <li><a href="#">regiões <span class="arrow">›</span></a></li>
+            <li><a href="#">telejornais <span class="arrow">›</span></a></li>
+            <li><a href="#">blogs e colunas <span class="arrow">›</span></a></li>
+            <li><a href="#">serviços <span class="arrow">›</span></a></li>
+        </ul>
+    </nav>
+    <div id="menu-overlay" class="menu-overlay"></div>
+
+    <!-- Conteúdo Central -->
+    <main class="content">
+        
+        <!-- Banner de Anúncio Azul Claro -->
+        <div class="ad-banner light-blue-banner">
+            <h2>BANCO MERCANTIL</h2>
+            <p>Acesse sua conta com segurança.</p>
+        </div>
+
+        <article class="news-item">
+            <span class="kicker">Cessar-fogo</span>
+            <h2 class="title">Acordo de paz: medidas já estão em vigor na região central</h2>
+            <p class="subtitle">Os 14 pontos previstos no documento foram assinados nesta manhã.</p>
+            <span class="meta">Agora — Em Mundo</span>
+        </article>
+
+        <hr class="divider">
+
+        <article class="news-item">
+            <span class="kicker">Caso Master</span>
+            <h2 class="title">Diretor admite viagem a Lisboa em jatinho particular a convite de empresário</h2>
+            <img src="https://via.placeholder.com/800x450/cccccc/333333?text=Imagem+da+Materia" alt="Foto da Matéria">
+            <span class="meta">Há 5 horas — Em Política</span>
+        </article>
+
+        <!-- Banner de Anúncio Azul Escuro -->
+        <div class="ad-banner dark-blue-banner">
+            <h3>PROCRED</h3>
+            <p>Financie até <strong>R$180 mil</strong><br>Juros + baixos em até 48x</p>
+            <button>CONTRATE PELO APP</button>
+        </div>
+
+        <article class="news-item">
+            <!-- Título com cor de destaque azul fria -->
+            <h2 class="title highlight-title">'Pode ser o Papa que não pode entrar': Empresário exigiu privacidade a políticos</h2>
+            <div class="image-grid">
+                <img src="https://via.placeholder.com/400x400/cccccc/333333?text=Neve" alt="Foto Neve">
+                <img src="https://via.placeholder.com/400x400/dddddd/333333?text=Hotel" alt="Foto Hotel">
+            </div>
+            <span class="meta">Há 4 horas — Em Política</span>
+        </article>
+        
+        <hr class="divider">
+        
+        <article class="news-item">
+            <h2 class="title link-title">Conheça o hotel de luxo onde foram pagas as suítes, segundo a investigação</h2>
+        </article>
+
+    </main>
     <script src="script.js"></script>
 </body>
 </html>
-
