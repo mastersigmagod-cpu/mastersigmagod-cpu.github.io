@@ -1,9 +1,9 @@
 [
   {
-    "titulo": "WR News estreia novo portal",
+    "titulo": "WR News estreia oficialmente",
     "data": "17/06/2026",
     "categoria": "Tecnologia",
-    "imagem": "imagens/noticia1.jpg",
-    "resumo": "O portal WR News ganha uma nova aparência."
+    "imagem": "https://picsum.photos/800/500",
+    "resumo": "O novo portal WR News entra no ar."
   }
 ]
