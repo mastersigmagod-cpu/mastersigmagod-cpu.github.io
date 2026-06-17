@@ -1,9 +1,32 @@
 [
   {
+    "id": 1,
     "categoria": "Tecnologia",
-    "titulo": "Nova IA",
-    "resumo": "BRRBRRPATAPIM...",
-    "imagem": "imagens/ia.jpg",
-    "conteudo": "O 67 é do bem"
+    "titulo": "OpenAI anuncia novo modelo",
+    "resumo": "Empresa revela melhorias importantes.",
+    "imagem": "imagens/noticia1.jpg",
+    "autor": "WR News",
+    "data": "17/06/2026",
+    "conteudo": "Texto completo da notícia aqui."
+  },
+  {
+    "id": 2,
+    "categoria": "IA",
+    "titulo": "IA acelera produtividade",
+    "resumo": "Empresas adotam automação.",
+    "imagem": "imagens/noticia2.jpg",
+    "autor": "WR News",
+    "data": "17/06/2026",
+    "conteudo": "Texto completo da notícia aqui."
   }
 ]
+{
+  "id": 3,
+  "categoria": "IA",
+  "titulo": "COMO O 67 SURGIU",
+  "resumo": "Resumo curto",
+  "imagem": "imagens/noticia3.jpg",
+  "autor": "WR News",
+  "data": "18/06/67",
+  "conteudo": "COMO O 67 SURGIU"
+}
