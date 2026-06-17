@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WR News - Informação Direta e Sólida</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <h2>Configurações</h2>
+            <button id="close-btn" class="solid-btn outline">X</button>
+        </div>
+        <ul class="sidebar-links">
+            <li><button id="theme-toggle" class="menu-btn">Tema: Escuro (Ativar)</button></li>
+            <li><button class="menu-btn" onclick="alert('Funcionalidade em breve!')">Meus Favoritos</button></li>
+            <li><button class="menu-btn" onclick="alert('Funcionalidade em breve!')">Limpar Minhas Notícias</button></li>
+        </ul>
+    </aside>
+
+    <div id="overlay" class="overlay"></div>
+
+    <header class="cabecalho">
+        <div class="header-top">
+            <div class="hamburger" id="hamburger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <div class="logo">
+                <h1>WR <span class="destaque">News</span></h1>
+            </div>
+            
+            <button id="btn-add-news" class="solid-btn">Nova Notícia</button>
+        </div>
+
+        <nav class="navegacao">
+            <ul class="categorias-scroll">
+                <li><button class="cat-btn active">Últimas</button></li>
+                <li><button class="cat-btn">Brasil</button></li>
+                <li><button class="cat-btn">Mundo</button></li>
+                <li><button class="cat-btn">Tecnologia</button></li>
+                <li><button class="cat-btn">Economia</button></li>
+                <li><button class="cat-btn">Esportes</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section id="news-container" class="grid-noticias">
+            </section>
+    </main>
+
+    <div id="modal-add" class="modal">
+        <div class="modal-content">
+            <h2>Escrever Matéria</h2>
+            <form id="form-news">
+                <input type="text" id="news-title" placeholder="Título da Notícia" required>
+                <input type="text" id="news-category" placeholder="Categoria (ex: Economia)" required>
+                <input type="url" id="news-image" placeholder="URL da Imagem (Opcional)">
+                <textarea id="news-desc" placeholder="Resumo dos fatos..." rows="5" required></textarea>
+                <div class="modal-actions">
+                    <button type="button" id="btn-cancel" class="solid-btn outline">Cancelar</button>
+                    <button type="submit" class="solid-btn">Publicar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="rodape">
+        <p>&copy; 2026 WR News. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
